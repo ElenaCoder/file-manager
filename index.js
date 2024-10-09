@@ -2,25 +2,37 @@ import os from 'os';
 import path from 'path';
 import readline from 'readline';
 
-const username = process.argv.find(arg => arg.startsWith('--username='))?.split('=')[1];
+function printCurrentDirectory() {
+    console.log(`You are currently in ${process.cwd()}`);
+}
 
-if (!username) {
-    console.log('Invalid input');
-    process.exit();
+function printWelcomeMessage(username) {
+    console.log(`Welcome to the File Manager, ${username}!`);
+    printCurrentDirectory();
+}
+
+function handleUserInput(input) {
+    switch (input.trim()) {
+      case '.exit':
+        printCurrentDirectory();
+        rl.close();
+        break;
+      default:
+        console.log(`Command not recognized: ${input}`);
+        printCurrentDirectory();
+    }
   }
 
-  console.log(`Welcome to the File Manager, ${username}!`);
+const username = process.argv.find(arg => arg.startsWith('--username='))?.split('=')[1]|| 'User';
+printWelcomeMessage(username);
 
-  const rl = readline.createInterface({
+const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-  });
+});
 
 rl.on('line', (input) => {
-    if (input === '.exit') {
-        rl.close();
-        console.log(`Thank you for using File Manager, ${username}, goodbye!`);
-    }
+    handleUserInput(input);
 });
 
 rl.on('close', () => {
