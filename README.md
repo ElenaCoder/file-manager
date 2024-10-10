@@ -57,13 +57,16 @@ Thank you for using File Manager, your_username, goodbye!
 <details>
 <summary>Navigation & Working Directory (nwd)</summary>
 
-- Go upper from current directory
+- Go upper from current directory.
+
 **Command**: `up` - moves one directory up (except when in the root directory).
 
-- Change to dedicated folder
+- Change to dedicated folder.
+
 **Command**: `cd path_to_directory` - changes the working directory to the specified path. The path can be relative or absolute.
 
-- List all files and folders in the current directory
+- List all files and folders in the current directory.
+
 **Command**: `ls`- prints the list of files and directories. The output is sorted with directories listed first, followed by files.
 
 </details>
