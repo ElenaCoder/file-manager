@@ -1,6 +1,7 @@
 import handleNavigation  from '../commands/navigation/handleNavigation.js';
 import handleFileOperations from '../commands/file/handleFileOperations.js';
 import handleOSCommands from '../commands/os/handleOsCommands.js';
+import handleHashCalculation from '../commands/hash/handleHashCalculation.js';
 import utils from '../utils/utils.js';
 
 function handleUserInput(input, rl) {
@@ -22,6 +23,9 @@ function handleUserInput(input, rl) {
       break;
     case 'os':
       handleOSCommands(args[0]);
+      break;
+    case 'hash':
+      handleHashCalculation(args[0], rl);
       break;
     case '.exit':
       rl.close();
