@@ -1,3 +1,4 @@
+
 function printCurrentDirectory() {
     console.log(`You are currently in ${process.cwd()}`);
 }
@@ -7,4 +8,8 @@ function printWelcomeMessage(username) {
     printCurrentDirectory();
 }
 
-export default { printCurrentDirectory, printWelcomeMessage };
+function printGoodbyeMessage(username) {
+    console.log(`\nThank you for using File Manager, ${username}, goodbye!`);
+}
+
+export default { printCurrentDirectory, printWelcomeMessage, printGoodbyeMessage };
