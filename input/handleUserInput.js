@@ -2,6 +2,7 @@ import handleNavigation  from '../commands/navigation/handleNavigation.js';
 import handleFileOperations from '../commands/file/handleFileOperations.js';
 import handleOSCommands from '../commands/os/handleOsCommands.js';
 import handleHashCalculation from '../commands/hash/handleHashCalculation.js';
+import handleCompression from '../commands/compression/handleCompression.js';
 import utils from '../utils/utils.js';
 
 function handleUserInput(input, rl) {
@@ -26,6 +27,10 @@ function handleUserInput(input, rl) {
       break;
     case 'hash':
       handleHashCalculation(args[0], rl);
+      break;
+    case 'compress':
+    case 'decompress':
+      handleCompression(command, args, rl);
       break;
     case '.exit':
       rl.close();
