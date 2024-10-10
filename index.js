@@ -21,7 +21,7 @@ rl.on('line', (input) => {
 });
 
 rl.on('close', () => {
-  console.log(`\nThank you for using File Manager, ${username}, goodbye!`);
+  utils.printGoodbyeMessage(username);
   process.exit(0);
 });
 
