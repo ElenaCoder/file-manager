@@ -57,90 +57,76 @@ Thank you for using File Manager, your_username, goodbye!
 <details>
 <summary>Navigation & Working Directory (nwd)</summary>
 
-- Go upper from current directory.
+#### Go upper from current directory.
   - **Command**: `up` - moves one directory up (except when in the root directory).
 
-- Change to dedicated folder.
-  - **Command**: `cd path_to_directory` - changes the working directory to the specified path. The path can be relative or absolute.
+#### Change to dedicated folder.
+**Command**: `cd path_to_directory` - changes the working directory to the specified path. The path can be relative or absolute.
 
-- List all files and folders in the current directory.
-  - **Command**: `ls`- prints the list of files and directories. The output is sorted with directories listed first, followed by files.
+#### List all files and folders in the current directory.
+**Command**: `ls`- prints the list of files and directories. The output is sorted with directories listed first, followed by files.
 
 </details>
 
 <details>
 <summary>Basic File Operations</summary>
 
-### Read a file's content
-**Command**: `cat path_to_file`
-Reads and prints the content of the specified file.
+#### Read a file's content
+**Command**: `cat path_to_file` - reads and prints the content of the specified file.
 
-### Create a new file
-**Command**: `add new_file_name`
-Creates an empty file with the specified name.
+#### Create a new file
+**Command**: `add new_file_name` - creates an empty file with the specified name.
 
-### Rename a file
-**Command**: `rn path_to_file new_filename`
-Renames the specified file while keeping its content unchanged.
+#### Rename a file
+**Command**: `rn path_to_file new_filename` - renames the specified file while keeping its content unchanged.
 
-### Copy a file
-**Command**: `cp path_to_file path_to_new_directory`
-Copies the file to the specified directory using readable and writable streams.
+#### Copy a file
+**Command**: `cp path_to_file path_to_new_directory` - copies the file to the specified directory using readable and writable streams.
 
-### Move a file
-**Command**: `mv path_to_file path_to_new_directory`
-Moves the file to the new directory (same as copy, but deletes the original file).
+#### Move a file
+**Command**: `mv path_to_file path_to_new_directory` -moves the file to the new directory (same as copy, but deletes the original file).
 
-### Delete a file
-**Command**: `rm path_to_file`
-Deletes the specified file.
+#### Delete a file
+**Command**: `rm path_to_file` - deletes the specified file.
 
 </details>
 
 <details>
 <summary>Operating System Info</summary>
 
-### Get system End-Of-Line (EOL)
-**Command**: `os --EOL`
-Prints the system's default EOL.
+#### Get system End-Of-Line (EOL)
+**Command**: `os --EOL` - prints the system's default EOL.
 
-### Get CPU information
-**Command**: `os --cpus`
-Displays the number of CPUs, as well as each CPU's model and clock rate (in GHz).
+#### Get CPU information
+**Command**: `os --cpus` - displays the number of CPUs, as well as each CPU's model and clock rate (in GHz).
 
-### Get home directory
-**Command**: `os --homedir`
-Prints the user's home directory.
+#### Get home directory
+**Command**: `os --homedir` - prints the user's home directory.
 
-### Get current system user name
-**Command**: `os --username`
-Prints the current system's user name (not the username passed at the start).
+#### Get current system user name
+**Command**: `os --username` - prints the current system's user name (not the username passed at the start).
 
-### Get CPU architecture
-**Command**: `os --architecture`
-Prints the CPU architecture for which Node.js binary was compiled.
+#### Get CPU architecture
+**Command**: `os --architecture` - prints the CPU architecture for which Node.js binary was compiled.
 
 </details>
 
 <details>
 <summary>Hash Calculation</summary>
 
-### Calculate hash for a file
-**Command**: `hash path_to_file`
-Computes and prints the hash for the specified file.
+#### Calculate hash for a file
+**Command**: `hash path_to_file` - computes and prints the hash for the specified file.
 
 </details>
 
 <details>
 <summary>Compression & Decompression</summary>
 
-### Compress a file
-**Command**: `compress path_to_file path_to_destination`
-Compresses the specified file using the Brotli algorithm and streams, saving the result in the destination.
+#### Compress a file
+**Command**: `compress path_to_file path_to_destination` - compresses the specified file using the Brotli algorithm and streams, saving the result in the destination.
 
-### Decompress a file
-**Command**: `decompress path_to_file path_to_destination`
-Decompresses the previously compressed file using the Brotli algorithm, ensuring the result matches the original file.
+#### Decompress a file
+**Command**: `decompress path_to_file path_to_destination` - decompresses the previously compressed file using the Brotli algorithm, ensuring the result matches the original file.
 
 </details>
 
