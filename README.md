@@ -23,7 +23,7 @@ This project implements a File Manager using Node.js APIs. The File Manager allo
 1. Clone the repository:
 
 ```
-git clone <your-repository-url>
+git clone https://github.com/ElenaCoder/file-manager.git
 cd file-manager
 ```
 
@@ -35,6 +35,7 @@ npm run start -- --username=your_username
 
 ```
 Replace your_username with your desired username. This username will be displayed in the welcome and exit messages.
+
 2. Example output:
 
 ```
@@ -56,17 +57,14 @@ Thank you for using File Manager, your_username, goodbye!
 <details>
 <summary>Navigation & Working Directory (nwd)</summary>
 
-### Go upper from current directory
-**Command**: `up`
-Moves one directory up (except when in the root directory).
+- Go upper from current directory
+**Command**: `up` - moves one directory up (except when in the root directory).
 
-### Change to dedicated folder
-**Command**: `cd path_to_directory`
-Changes the working directory to the specified path. The path can be relative or absolute.
+- Change to dedicated folder
+**Command**: `cd path_to_directory` - changes the working directory to the specified path. The path can be relative or absolute.
 
-### List all files and folders in the current directory
-**Command**: `ls`
-Prints the list of files and directories. The output is sorted with directories listed first, followed by files.
+- List all files and folders in the current directory
+**Command**: `ls`- prints the list of files and directories. The output is sorted with directories listed first, followed by files.
 
 </details>
 
