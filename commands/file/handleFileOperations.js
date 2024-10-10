@@ -20,7 +20,7 @@ function handleFileOperations(command, args, rl) {
       copyFile(args[0], args[1], rl);
       break;
     case 'mv':
-      moveFile(args[0], args[1]);
+      moveFile(args[0], args[1], rl);
       break;
     case 'rm':
       removeFile(args[0], rl);
