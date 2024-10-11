@@ -12,9 +12,10 @@ function handleCompression(command, args, rl) {
       decompressFile(src, dest, rl);
       break;
     default:
-      console.log('Invalid compression command');
-      rl.prompt();
+      return false;
   }
+
+  return true;
 }
 
 export default handleCompression;
