@@ -17,6 +17,7 @@ utils.printWelcomeMessage(username);
 
 rl.on('line', (input) => {
     handleUserInput(input, rl);
+    utils.printCurrentDirectory();
     rl.prompt();
 });
 
