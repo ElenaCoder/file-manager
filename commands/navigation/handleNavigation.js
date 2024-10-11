@@ -13,7 +13,11 @@ function handleNavigation(command, args, rl) {
     case 'ls':
       listDirectory(rl);
       break;
+    default:
+      return false;
   }
+
+  return true;
 }
 
 export default handleNavigation;
