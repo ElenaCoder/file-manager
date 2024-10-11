@@ -7,27 +7,50 @@ async function decompressFile(src, dest, rl) {
     const absoluteSrcPath = path.resolve(process.cwd(), src);
     const absoluteDestPath = path.resolve(process.cwd(), dest, path.basename(src, '.br'));
 
+    if (!fs.existsSync(absoluteSrcPath)) {
+      console.log(`Source file does not exist: ${absoluteSrcPath}`);
+      return;
+    }
+
+    console.log(`\nDecompressing...`);
+
     const readableStream = fs.createReadStream(absoluteSrcPath);
     const writableStream = fs.createWriteStream(absoluteDestPath);
     const brotliDecompress = zlib.createBrotliDecompress();
 
-    readableStream.pipe(brotliDecompress).pipe(writableStream);
+    return new Promise((resolve, reject) => {
+      readableStream
+        .pipe(brotliDecompress)
+        .pipe(writableStream)
+        .on('finish', () => {
+          console.log(`\n${src} successfully decompressed to ${absoluteDestPath}`);
+          resolve();
+        })
+        .on('error', (err) => {
+          console.log('Decompression failed due to an error:', err.message);
+          // Delete the incomplete file
+          if (fs.existsSync(absoluteDestPath)) {
+            fs.unlinkSync(absoluteDestPath);
+          }
+          reject(err);
+        });
 
-    writableStream.on('finish', () => {
-      console.log(`\n${src} decompressed to ${absoluteDestPath}`);
-    });
+      readableStream.on('error', (err) => {
+        console.log('Error reading source file:', err.message);
+        reject(err);
+      });
 
-    readableStream.on('error', () => {
-      console.log('Operation failed');
-    });
-
-    writableStream.on('error', () => {
-      console.log('Operation failed');
+      writableStream.on('error', (err) => {
+        console.log('Error writing destination file:', err.message);
+        // Delete the incomplete file
+        if (fs.existsSync(absoluteDestPath)) {
+          fs.unlinkSync(absoluteDestPath);
+        }
+        reject(err);
+      });
     });
   } catch (err) {
-    console.log('Operation failed');
-  } finally {
-    rl.prompt();
+    console.log('Operation failed:', err.message);
   }
 }
 
