@@ -1,6 +1,9 @@
+🔔 🔔 🔔
+---
+
 # File Manager
 
-This project implements a File Manager using Node.js APIs. The File Manager allows you to perform basic file operations, interact with the operating system, calculate file hashes, and handle file compression/decompression.
+This project implements a **File Manager** using Node.js APIs. The File Manager allows you to perform basic file operations, interact with the operating system, calculate file hashes, and handle file compression/decompression.
 
 ## Features
 
@@ -21,38 +24,33 @@ This project implements a File Manager using Node.js APIs. The File Manager allo
 ### Installation
 
 1. Clone the repository:
-
-```
-git clone https://github.com/ElenaCoder/file-manager.git
-cd file-manager
-```
+  ```
+  git clone https://github.com/ElenaCoder/file-manager.git
+  cd file-manager
+  ```
 
 ## Running the File Manager
 
 1. To start the File Manager, use the following command:
-```
-npm run start -- --username=your_username
-
-```
-Replace your_username with your desired username. This username will be displayed in the welcome and exit messages.
+  ```
+  npm run start -- --username=your_username
+  ```
+  Replace your_username with your desired username. This username will be displayed in the welcome and exit messages.
 
 2. Example output:
+  ```
+  Welcome to the File Manager, your_username!
+  You are currently in /Users/your_username
+  ```
 
-```
-Welcome to the File Manager, your_username!
-You are currently in /Users/your_username
-
-```
 3. To exit the program, type `.exit` or press `Ctrl + C`.
 
 4. Upon exit, you will see a message like:
+  ```
+  Thank you for using File Manager, your_username, goodbye!
+  ```
 
-```
-Thank you for using File Manager, your_username, goodbye!
-
-```
-
-# File Manager Operations
+## File Manager Operations
 
 <details>
 <summary>Navigation & Working Directory (nwd)</summary>
@@ -138,3 +136,10 @@ Thank you for using File Manager, your_username, goodbye!
 - If an operation fails (e.g., trying to work on a non-existent file), the message `Operation failed` will be printed, and the user can enter another command.
 
 </details>
+
+
+## Project preview
+
+Explore a sneak peek of the File Manager Navigation features with this animated GIF.
+
+![Navigation demo GIF](./preview/navigation-demo.gif)
