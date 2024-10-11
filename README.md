@@ -142,4 +142,4 @@ This project implements a **File Manager** using Node.js APIs. The File Manager 
 
 Explore a sneak peek of the File Manager Navigation features with this animated GIF.
 
-![Navigation demo GIF](./preview/navigation-demo.gif)
+![Navigation demo GIF](./preview/navigation-demo.gif).
