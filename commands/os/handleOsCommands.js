@@ -1,35 +1,36 @@
-import os from 'os';
+import getEOL from './osOperations/getEOL.js';
+import getCPUs from './osOperations/getCPUs.js';
+import getHomeDir from './osOperations/getHomeDir.js';
+import getUsername from './osOperations/getUsername.js';
+import getCPUArchitecture from './osOperations/getCPUArchitecture.js';
 
-function handleOSCommands(command) {
-  switch (command) {
+function handleOSCommands(command, args, rl) {
+  if(command !== 'os') {
+    return false;
+  }
+
+  switch (args[0]) {
     case '--EOL':
-      console.log(`Default EOL: ${JSON.stringify(os.EOL)}`);
+      getEOL();
       break;
-
     case '--cpus':
-      const cpus = os.cpus();
-      console.log(`Total CPUs: ${cpus.length}`);
-      cpus.forEach((cpu, index) => {
-        console.log(`CPU ${index + 1}: ${cpu.model}, ${cpu.speed / 1000} GHz`);
-      });
+      getCPUs();
       break;
-
     case '--homedir':
-      console.log(`Home directory: ${os.homedir()}`);
+      getHomeDir();
       break;
-
     case '--username':
-      console.log(`System username: ${os.userInfo().username}`);
+      getUsername();
       break;
-
     case '--architecture':
-      console.log(`CPU architecture: ${os.arch()}`);
+      getCPUArchitecture();
       break;
-
     default:
       console.log('Invalid OS command');
       break;
   }
+
+  return true;
 }
 
 export default handleOSCommands;
