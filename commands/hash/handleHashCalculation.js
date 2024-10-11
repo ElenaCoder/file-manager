@@ -2,7 +2,12 @@ import fs from 'fs';
 import crypto from 'crypto';
 import path from 'path';
 
-async function handleHashCalculation(filePath, rl) {
+async function handleHashCalculation(command, args, rl) {
+  if(command !== 'hash') {
+    return false;
+  }
+
+  const filePath = args[0];
   try {
     const absolutePath = path.resolve(process.cwd(), filePath);
     
@@ -32,6 +37,8 @@ async function handleHashCalculation(filePath, rl) {
   } finally {
     rl.prompt();
   }
+
+  return true;
 }
 
 export default handleHashCalculation;
