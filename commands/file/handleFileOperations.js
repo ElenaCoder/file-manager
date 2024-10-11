@@ -25,7 +25,11 @@ function handleFileOperations(command, args, rl) {
     case 'rm':
       removeFile(args[0], rl);
       break;
-  }
+    default:
+        return false;
+    }
+
+    return true;
 }
 
 export default handleFileOperations;
